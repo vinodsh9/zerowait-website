@@ -201,6 +201,9 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .total{border-top:2px dashed currentColor;padding-top:16px;display:flex;flex-direction:column;gap:2px}
 .total span{font-size:14px;font-weight:600;opacity:.8}
 .total strong{font-family:var(--led-font);font-weight:900;font-size:clamp(2.6rem,6vw,3.8rem);line-height:1.05;font-variant-numeric:tabular-nums}
+.calc-work{font-size:14px;font-weight:600;font-variant-numeric:tabular-nums;opacity:.85}
+.calc-year{font-size:17px;font-weight:600;margin-top:6px}
+.calc-year b{font-weight:850}
 .total em{font-style:normal;font-size:13px;opacity:.75}
 
 /* audience */
@@ -274,7 +277,7 @@ footer a:hover{color:var(--on-panel)}
     <a class="logo" href="#top" aria-label="ZeroWait home">ZER0WAIT</a>
     <nav aria-label="Main">
       <a href="#demo">Try the demo</a>
-      <a href="#cost">Cost of waiting</a>
+      <a href="#cost">Loss calculator</a>
       <a href="#pricing">Pricing</a>
       <a href="#faq">FAQ</a>
       <a class="btn btn-led" href="#start">Get ZeroWait</a>
@@ -297,7 +300,7 @@ footer a:hover{color:var(--on-panel)}
       <p class="lede">ZeroWait is an AI receptionist on your business WhatsApp. While you're busy with a customer, it answers the next one, books the visit, reminds them 4 hours before and follows up after. Built for clinics, salons and local businesses across India.</p>
       <div class="hero-ctas">
         <a class="btn btn-led" href="#demo">Try it as a customer</a>
-        <a class="btn btn-line" href="#start">Get a free setup call</a>
+        <a class="btn btn-line" href="#cost">Calculate your loss</a>
       </div>
     </div>
     <aside class="slip" aria-label="Sample appointment token">
@@ -328,6 +331,23 @@ footer a:hover{color:var(--on-panel)}
       <h3>Or they just forget</h3>
       <p>Booked slots go empty when no one reminds them. You never find out why.</p>
     </div>
+  </div>
+</section>
+
+<section class="calc" id="cost">
+  <div class="wrap">
+    <div class="calc-copy">
+      <h2 class="sign h2">What does waiting cost you?</h2>
+      <p class="lede">Every WhatsApp enquiry answered late is a customer who might book somewhere else. Set the numbers for your business.</p>
+    </div>
+    <form class="receipt" id="meter" aria-label="Missed enquiry calculator">
+      <h3><span>Monthly loss slip</span><span>Est.</span></h3>
+      <div class="f"><label for="missed">Enquiries missed or answered late, per week <output id="missedOut" for="missed">6</output></label><input id="missed" type="range" min="1" max="40" value="6"></div>
+      <div class="f"><label for="value">Average value of one booking <output id="valueOut" for="value">₹800</output></label><input id="value" type="range" min="200" max="10000" step="100" value="800"></div>
+      <div class="f"><label for="rate">How many would have booked <output id="rateOut" for="rate">50%</output></label><input id="rate" type="range" min="10" max="100" step="5" value="50"></div>
+      <div class="total" aria-live="polite"><span>Business you could be losing each month</span><strong id="lossOut">₹10,320</strong><span class="calc-work" id="workOut">6 × 4.3 weeks × ₹800 × 50%</span><span class="calc-year">That's <b id="yearOut">₹1,23,840</b> a year.</span><em>An estimate from your numbers above, not a promise.</em></div>
+      <a class="btn btn-led" href="#demo" style="background:#141414;color:#FF5A1F">See how ZeroWait wins it back</a>
+    </form>
   </div>
 </section>
 
@@ -383,21 +403,6 @@ footer a:hover{color:var(--on-panel)}
   </div>
 </section>
 
-<section class="calc" id="cost">
-  <div class="wrap">
-    <div class="calc-copy">
-      <h2 class="sign h2">What does waiting cost you?</h2>
-      <p class="lede">Every WhatsApp enquiry answered late is a customer who might book somewhere else. Set the numbers for your business.</p>
-    </div>
-    <form class="receipt" id="meter" aria-label="Missed enquiry calculator">
-      <h3><span>Monthly loss slip</span><span>Est.</span></h3>
-      <div class="f"><label for="missed">Enquiries missed or answered late, per week <output id="missedOut" for="missed">6</output></label><input id="missed" type="range" min="1" max="40" value="6"></div>
-      <div class="f"><label for="value">Average value of one booking <output id="valueOut" for="value">₹800</output></label><input id="value" type="range" min="200" max="10000" step="100" value="800"></div>
-      <div class="f"><label for="rate">How many would have booked <output id="rateOut" for="rate">50%</output></label><input id="rate" type="range" min="10" max="100" step="5" value="50"></div>
-      <div class="total" aria-live="polite"><span>Business you could be losing each month</span><strong id="lossOut">₹10,320</strong><em>An estimate from your numbers above, not a promise.</em></div>
-    </form>
-  </div>
-</section>
 
 <section class="who" aria-labelledby="whoTitle">
   <div class="wrap">
@@ -627,7 +632,7 @@ start('dental');
 (function(){
   const inr=n=>'₹'+Math.round(n).toLocaleString('en-IN');
   function u(){const m=+$('missed').value,v=+$('value').value,r=+$('rate').value;
-    $('missedOut').textContent=m;$('valueOut').textContent=inr(v);$('rateOut').textContent=r+'%';$('lossOut').textContent=inr(m*4.3*v*r/100);}
+    $('missedOut').textContent=m;$('valueOut').textContent=inr(v);$('rateOut').textContent=r+'%';const mo=m*4.3*v*r/100;$('lossOut').textContent=inr(mo);$('yearOut').textContent=inr(mo*12);$('workOut').textContent=m+' × 4.3 weeks × '+inr(v)+' × '+r+'%';}
   ['missed','value','rate'].forEach(id=>$(id).addEventListener('input',u));
   $('meter').addEventListener('submit',e=>e.preventDefault());u();
 })();
