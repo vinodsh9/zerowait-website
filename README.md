@@ -7,7 +7,7 @@ Marketing site for ZeroWait, an AI WhatsApp receptionist for appointment-based b
 Before going live, replace these placeholders in every file:
 - `zerowaitai.com` – your website address
 
-- `[LEGAL BUSINESS NAME]`, `[REGISTERED ADDRESS]`, `hello@zerowaitai.com`, grievance officer details, dates and periods in privacy.html and terms.html
+- Dates, data-retention periods and refund policy in privacy.html and terms.html
 
 ## Structure
 - `index.html` – home page (LED token-board design)
