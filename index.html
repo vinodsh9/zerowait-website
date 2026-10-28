@@ -255,6 +255,11 @@ footer nav{display:flex;flex-wrap:wrap;gap:22px}
 footer a{text-decoration:none}
 footer a:hover{color:var(--ink)}
 
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.was{display:block;font-size:20px;font-weight:600;line-height:1.2;margin-bottom:6px;opacity:.7}
+.was s{text-decoration-thickness:2px}
+.deal{align-self:flex-start;font-size:13px;font-weight:700;padding:5px 10px;border-radius:999px;background:var(--marigold-wash);color:var(--ink)}
+.plan.star .deal{background:var(--marigold);color:var(--marigold-ink)}
 @media (prefers-reduced-motion: reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
 </style>
 </head>
@@ -428,7 +433,7 @@ footer a:hover{color:var(--ink)}
     <div class="plans">
       <div class="plan">
         <h3>Starter</h3>
-        <div class="amount">₹599 <small>/ month</small></div>
+        <div class="amount"><span class="was"><span class="sr">Regular price </span><s>₹1,599</s></span> <span class="sr">Founding price </span>₹599 <small>/ month</small></div><span class="deal">Founding price · you save ₹1,000 a month</span>
         <p>For a single owner who's tired of missing messages.</p>
         <ul>
           <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Instant WhatsApp replies</li>
@@ -441,7 +446,7 @@ footer a:hover{color:var(--ink)}
       <div class="plan star">
         <span class="tag">Most popular</span>
         <h3>Growth</h3>
-        <div class="amount">₹799 <small>/ month</small></div>
+        <div class="amount"><span class="was"><span class="sr">Regular price </span><s>₹2,199</s></span> <span class="sr">Founding price </span>₹799 <small>/ month</small></div><span class="deal">Founding price · you save ₹1,400 a month</span>
         <p>For busy businesses where every no-show hurts.</p>
         <ul>
           <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>Everything in Starter</li>

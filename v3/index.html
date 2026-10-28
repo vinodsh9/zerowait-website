@@ -299,6 +299,11 @@ footer a:hover{color:var(--on-panel)}
 .perks span{font-size:15.5px}
 .offer .btn{background:#141414;color:#FF5A1F;margin-top:24px}
 
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.was{display:block;font-size:20px;font-weight:600;line-height:1.2;margin-bottom:6px;opacity:.7}
+.was s{text-decoration-thickness:2px}
+.deal{align-self:flex-start;font-size:13px;font-weight:700;padding:5px 10px;border-radius:999px;background:var(--led-dim);color:var(--led);font-family:var(--led-font);letter-spacing:.03em}
+.tk:not(.hot) .deal{background:#FFE6DB;color:#8A2A00}
 @media (prefers-reduced-motion: reduce){*,*::before,*::after{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
 </style>
 </head>
@@ -508,7 +513,7 @@ footer a:hover{color:var(--on-panel)}
       <div class="tk">
         <span class="no">TOKEN 001</span>
         <h3>Starter</h3>
-        <div class="amt">₹599 <small>/ month</small></div>
+        <div class="amt"><span class="was"><span class="sr">Regular price </span><s>₹1,599</s></span> <span class="sr">Founding price </span>₹599 <small>/ month</small></div><span class="deal">Save ₹1,000 every month</span>
         <p>For one owner who's tired of missing messages.</p>
         <ul><li>Instant WhatsApp replies</li><li>Appointment booking</li><li>Reminder 4 hours before</li><li>Up to 99 customer chats a month</li></ul>
         <a class="btn btn-line" href="#start">Start with Starter</a>
@@ -516,7 +521,7 @@ footer a:hover{color:var(--on-panel)}
       <div class="tk hot">
         <span class="no">TOKEN 002 · MOST PICKED</span>
         <h3>Growth</h3>
-        <div class="amt">₹799 <small>/ month</small></div>
+        <div class="amt"><span class="was"><span class="sr">Regular price </span><s>₹2,199</s></span> <span class="sr">Founding price </span>₹799 <small>/ month</small></div><span class="deal">Save ₹1,400 every month</span>
         <p>For busy businesses where every no-show hurts.</p>
         <ul><li>Everything in Starter</li><li>Follow-up 1 hour after</li><li>Ratings and feedback</li><li>Unhappy-customer alerts</li></ul>
         <a class="btn btn-led" href="#start">Start with Growth</a>
