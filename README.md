@@ -9,3 +9,12 @@ Before going live, replace these placeholders in every file:
 - `[YOUR_WHATSAPP_NUMBER]` – in index.html, digits only with country code
 
 - `[LEGAL BUSINESS NAME]`, `[REGISTERED ADDRESS]`, `hello@zerowaitai.com`, grievance officer details, dates and periods in privacy.html and terms.html
+
+## Structure
+- `index.html` – home page (LED token-board design)
+- `classic/` – earlier navy design, kept for reference (not indexed by Google)
+- `privacy.html`, `terms.html` – legal pages
+- `_headers`, `_redirects`, `404.html` – Cloudflare Pages settings
+
+## Hosting
+Cloudflare Pages, connected to this repo. No build step: build command empty, output directory `/`.
