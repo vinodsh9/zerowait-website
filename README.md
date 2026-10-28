@@ -5,5 +5,5 @@ Marketing site for ZeroWait, an AI WhatsApp receptionist for appointment-based b
 Before going live, replace these placeholders in every file:
 - `[YOUR-DOMAIN]` – your website address
 - `[YOUR_WHATSAPP_NUMBER]` – in index.html, digits only with country code
-- `[PRICE]`, `[LIMIT]` – plan prices and chat limits
+- `[LIMIT]` – plan prices and chat limits
 - `[LEGAL BUSINESS NAME]`, `[REGISTERED ADDRESS]`, `[YOUR-EMAIL]`, grievance officer details, dates and periods in privacy.html and terms.html

@@ -22,7 +22,7 @@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@graph":[
 {"@type":"Organization","@id":"https://[YOUR-DOMAIN]/#org","name":"ZeroWait","url":"https://[YOUR-DOMAIN]/","slogan":"Never miss an appointment","email":"[YOUR-EMAIL]","areaServed":"IN"},
-{"@type":"Service","name":"AI WhatsApp receptionist and appointment booking","serviceType":"Virtual receptionist","provider":{"@id":"https://[YOUR-DOMAIN]/#org"},"areaServed":{"@type":"Country","name":"India"},"description":"ZeroWait replies to customers on WhatsApp, books appointments, sends a reminder 4 hours before and follows up 1 hour after each visit."},
+{"@type":"Service","name":"AI WhatsApp receptionist and appointment booking","serviceType":"Virtual receptionist","provider":{"@id":"https://[YOUR-DOMAIN]/#org"},"areaServed":{"@type":"Country","name":"India"},"description":"ZeroWait replies to customers on WhatsApp, books appointments, sends a reminder 4 hours before and follows up 1 hour after each visit.","offers":[{"@type":"Offer","name":"Starter","price":"599","priceCurrency":"INR"},{"@type":"Offer","name":"Growth","price":"799","priceCurrency":"INR"}]},
 {"@type":"FAQPage","mainEntity":[
 {"@type":"Question","name":"Do I need a new phone number?","acceptedAnswer":{"@type":"Answer","text":"No. ZeroWait works with your business WhatsApp number, so customers keep messaging the number they already have."}},
 {"@type":"Question","name":"Will customers know they're talking to an assistant?","acceptedAnswer":{"@type":"Answer","text":"Yes. It introduces itself as your assistant and passes the chat to you whenever a customer needs you personally."}},
@@ -33,7 +33,7 @@
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Doto:wght@700;900&family=Caveat:wght@600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Doto:wght@700;900&display=swap">
 <style>
 /* Layout: a waiting-room LED token board turned into a brand. Concrete wall, black LED panels, paper token slips. The live demo is the centre of gravity. */
 :root{
@@ -287,17 +287,6 @@ footer a:hover{color:var(--on-panel)}
 .qr-card strong{font-family:var(--led-font);font-weight:900;font-size:18px;letter-spacing:.04em}
 .qr-card .btn{background:#141414;color:#FF5A1F;width:100%}
 
-/* founder */
-.founder .wrap{padding-block:clamp(64px,9vw,110px);display:grid;grid-template-columns:minmax(0,.55fr) minmax(0,1.45fr);gap:clamp(28px,5vw,64px);align-items:start}
-@media (max-width:860px){.founder .wrap{grid-template-columns:minmax(0,1fr)}.photo{width:min(260px,70%);aspect-ratio:1}}
-.photo{aspect-ratio:4/5;max-width:100%;background:var(--panel);border-radius:10px;display:grid;place-items:center;color:var(--on-panel-2);font-size:14px;text-align:center;padding:20px;transform:rotate(-2deg);box-shadow:0 18px 30px -20px rgba(0,0,0,.45)}
-.photo span{font-family:var(--led-font);color:var(--led);font-size:44px;font-weight:900;display:block;text-shadow:0 0 10px var(--led-glow)}
-.note{display:flex;flex-direction:column;gap:20px;max-width:44rem}
-.note blockquote{margin:0;font-size:clamp(1.6rem,3.4vw,2.6rem);font-weight:850;font-stretch:70%;line-height:1.08;text-transform:uppercase;text-wrap:balance}
-.note p{color:var(--ink-2);font-size:clamp(1.02rem,1.4vw,1.15rem)}
-.sig{font-family:"Caveat",cursive;font-size:38px;line-height:1;color:var(--ink)}
-.sig-role{font-size:14px;color:var(--ink-2);font-weight:600;margin-top:4px}
-
 /* founding offer */
 .offer{background:var(--led);color:#1A0800}
 .offer .wrap{padding-block:clamp(48px,7vw,84px);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(28px,5vw,64px);align-items:center}
@@ -474,19 +463,6 @@ footer a:hover{color:var(--on-panel)}
   </div>
 </section>
 
-<section class="founder" aria-labelledby="founderTitle">
-  <div class="wrap">
-    <div class="photo" role="img" aria-label="Photo of the founder"><div><span>[PHOTO]</span>Your real photo goes here, ideally at a clinic or shop counter.</div></div>
-    <div class="note">
-      <h2 class="ctrl-label" id="founderTitle" style="font-size:15px">A note from the founder</h2>
-      <blockquote>The business that replies first wins the customer.</blockquote>
-      <p>I've spent more than 15 years in sales, leading field teams across hundreds of branches. One lesson never changed: a customer who doesn't hear back in time goes to someone who replies.</p>
-      <p>Small clinics, salons and tutors lose customers every day for exactly this reason. Not because they're bad at their work, but because they're busy doing it. I built ZeroWait so owners never have to choose between the customer in front of them and the one messaging on WhatsApp.</p>
-      <p>Every ZeroWait desk is set up by our own team, for your business. If something isn't right, message me.</p>
-      <div><div class="sig">Vinod Sharma</div><div class="sig-role">Founder, ZeroWait · Gurugram</div></div>
-    </div>
-  </div>
-</section>
  aria-labelledby="whoTitle">
   <div class="wrap">
     <h2 class="sign h2" id="whoTitle">For every counter with a queue.</h2>
@@ -515,7 +491,7 @@ footer a:hover{color:var(--on-panel)}
         <li><b>Setup free</b><span>We configure your services, timings and replies for you.</span></li>
         <li><b>First month on us</b><span>Pay only once you've seen it bring in bookings.</span></li>
         <li><b>Founding price for life</b><span>Your monthly price stays the same as long as you stay.</span></li>
-        <li><b>Direct line to the founder</b><span>Your feedback shapes what ZeroWait does next.</span></li>
+        <li><b>Priority support</b><span>Your questions go to the front of our queue.</span></li>
       </ul>
       <a class="btn" href="#start">Claim a founding spot</a>
     </div>
@@ -532,7 +508,7 @@ footer a:hover{color:var(--on-panel)}
       <div class="tk">
         <span class="no">TOKEN 001</span>
         <h3>Starter</h3>
-        <div class="amt">[PRICE] <small>/ month</small></div>
+        <div class="amt">₹599 <small>/ month</small></div>
         <p>For one owner who's tired of missing messages.</p>
         <ul><li>Instant WhatsApp replies</li><li>Appointment booking</li><li>Reminder 4 hours before</li><li>Up to [LIMIT] chats a month</li></ul>
         <a class="btn btn-line" href="#start">Start with Starter</a>
@@ -540,7 +516,7 @@ footer a:hover{color:var(--on-panel)}
       <div class="tk hot">
         <span class="no">TOKEN 002 · MOST PICKED</span>
         <h3>Growth</h3>
-        <div class="amt">[PRICE] <small>/ month</small></div>
+        <div class="amt">₹799 <small>/ month</small></div>
         <p>For busy businesses where every no-show hurts.</p>
         <ul><li>Everything in Starter</li><li>Follow-up 1 hour after</li><li>Ratings and feedback</li><li>Unhappy-customer alerts</li></ul>
         <a class="btn btn-led" href="#start">Start with Growth</a>
