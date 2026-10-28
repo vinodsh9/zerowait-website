@@ -33,7 +33,7 @@
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Doto:wght@700;900&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=Doto:wght@700;900&family=Caveat:wght@600&display=swap">
 <style>
 /* Layout: a waiting-room LED token board turned into a brand. Concrete wall, black LED panels, paper token slips. The live demo is the centre of gravity. */
 :root{
@@ -267,6 +267,49 @@ footer a{text-decoration:none}
 footer a:hover{color:var(--on-panel)}
 .legal{font-size:13px;max-width:90ch;display:flex;flex-direction:column;gap:4px}
 
+/* demo controls */
+.demo-ctrl{display:flex;flex-direction:column;gap:10px;align-items:flex-start}
+.ctrl-label{font-size:13px;font-weight:700;color:var(--ink-2)}
+
+/* real desk */
+.real{background:var(--panel);color:var(--on-panel)}
+.real .wrap{padding-block:clamp(56px,8vw,100px);display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:clamp(32px,5vw,72px);align-items:center}
+@media (max-width:860px){.real .wrap{grid-template-columns:minmax(0,1fr)}}
+.real h2{font-size:clamp(2.6rem,7vw,5.2rem)}
+.real .lede{color:var(--on-panel-2);margin-top:18px}
+.real ul{margin:22px 0 0;padding:0;list-style:none;display:flex;flex-direction:column;gap:10px;color:var(--on-panel)}
+.real li{display:flex;gap:12px;align-items:baseline}
+.real li .led{font-size:15px;flex:none}
+.qr-card{background:var(--slip);color:var(--slip-ink);border-radius:10px;padding:24px;display:flex;flex-direction:column;align-items:center;gap:16px;text-align:center;justify-self:center;width:100%;max-width:340px}
+.qr-box{width:220px;max-width:100%;aspect-ratio:1;background:#FFFFFF;border-radius:6px;display:grid;place-items:center;padding:10px}
+.qr-box svg{width:100%;height:100%}
+.qr-box p{font-size:13px;color:#55555E;padding:12px}
+.qr-card strong{font-family:var(--led-font);font-weight:900;font-size:18px;letter-spacing:.04em}
+.qr-card .btn{background:#141414;color:#FF5A1F;width:100%}
+
+/* founder */
+.founder .wrap{padding-block:clamp(64px,9vw,110px);display:grid;grid-template-columns:minmax(0,.55fr) minmax(0,1.45fr);gap:clamp(28px,5vw,64px);align-items:start}
+@media (max-width:860px){.founder .wrap{grid-template-columns:minmax(0,1fr)}.photo{width:min(260px,70%);aspect-ratio:1}}
+.photo{aspect-ratio:4/5;max-width:100%;background:var(--panel);border-radius:10px;display:grid;place-items:center;color:var(--on-panel-2);font-size:14px;text-align:center;padding:20px;transform:rotate(-2deg);box-shadow:0 18px 30px -20px rgba(0,0,0,.45)}
+.photo span{font-family:var(--led-font);color:var(--led);font-size:44px;font-weight:900;display:block;text-shadow:0 0 10px var(--led-glow)}
+.note{display:flex;flex-direction:column;gap:20px;max-width:44rem}
+.note blockquote{margin:0;font-size:clamp(1.6rem,3.4vw,2.6rem);font-weight:850;font-stretch:70%;line-height:1.08;text-transform:uppercase;text-wrap:balance}
+.note p{color:var(--ink-2);font-size:clamp(1.02rem,1.4vw,1.15rem)}
+.sig{font-family:"Caveat",cursive;font-size:38px;line-height:1;color:var(--ink)}
+.sig-role{font-size:14px;color:var(--ink-2);font-weight:600;margin-top:4px}
+
+/* founding offer */
+.offer{background:var(--led);color:#1A0800}
+.offer .wrap{padding-block:clamp(48px,7vw,84px);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(28px,5vw,64px);align-items:center}
+@media (max-width:860px){.offer .wrap{grid-template-columns:minmax(0,1fr)}}
+.offer h2{font-size:clamp(2.6rem,7vw,5rem)}
+.offer .count{display:inline-flex;align-items:center;gap:12px;background:#141414;color:#FF5A1F;border-radius:8px;padding:10px 16px;font-family:var(--led-font);font-weight:900;font-size:clamp(1.1rem,2vw,1.4rem);letter-spacing:.04em;margin-top:20px;text-shadow:0 0 8px rgba(255,90,31,.55)}
+.perks{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:0;border-top:2px solid #1A0800}
+.perks li{border-bottom:2px solid #1A0800;padding:16px 0;display:grid;grid-template-columns:minmax(0,1fr);gap:2px}
+.perks b{font-size:clamp(1.2rem,2vw,1.5rem);font-stretch:75%;text-transform:uppercase;font-weight:850;line-height:1.1}
+.perks span{font-size:15.5px}
+.offer .btn{background:#141414;color:#FF5A1F;margin-top:24px}
+
 @media (prefers-reduced-motion: reduce){*,*::before,*::after{animation:none!important;transition:none!important}html{scroll-behavior:auto}}
 </style>
 </head>
@@ -277,6 +320,7 @@ footer a:hover{color:var(--on-panel)}
     <a class="logo" href="#top" aria-label="ZeroWait home">ZER0WAIT</a>
     <nav aria-label="Main">
       <a href="#demo">Try the demo</a>
+      <a href="#real">Real desk</a>
       <a href="#cost">Loss calculator</a>
       <a href="#pricing">Pricing</a>
       <a href="#faq">FAQ</a>
@@ -358,10 +402,18 @@ footer a:hover{color:var(--on-panel)}
         <h2 class="sign h2" id="demoTitle">You be the customer.</h2>
         <p class="lede">Book an appointment below, then fast-forward the clock to see the reminder and the follow-up arrive. This is exactly what your customers will see.</p>
       </div>
-      <div class="biz" role="group" aria-label="Choose a business">
-        <button type="button" data-biz="dental" aria-pressed="true">Dental clinic</button>
-        <button type="button" data-biz="salon" aria-pressed="false">Salon</button>
-        <button type="button" data-biz="tuition" aria-pressed="false">Tuition centre</button>
+      <div class="demo-ctrl">
+        <span class="ctrl-label" id="bizLbl">Business</span>
+        <div class="biz" role="group" aria-labelledby="bizLbl" id="bizGroup">
+          <button type="button" data-biz="dental" aria-pressed="true">Dental clinic</button>
+          <button type="button" data-biz="salon" aria-pressed="false">Salon</button>
+          <button type="button" data-biz="tuition" aria-pressed="false">Tuition centre</button>
+        </div>
+        <span class="ctrl-label" id="langLbl">Customer's language</span>
+        <div class="biz" role="group" aria-labelledby="langLbl" id="langGroup">
+          <button type="button" data-lang="en" aria-pressed="true">English</button>
+          <button type="button" data-lang="hi" aria-pressed="false">Hinglish</button>
+        </div>
       </div>
     </div>
 
@@ -403,8 +455,39 @@ footer a:hover{color:var(--on-panel)}
   </div>
 </section>
 
+<section class="real" id="real" aria-labelledby="realTitle">
+  <div class="wrap">
+    <div>
+      <h2 class="sign" id="realTitle">Don't trust a demo.<br>Test the real desk.</h2>
+      <p class="lede">Scan the code and message ZeroWait's own WhatsApp desk. It's the same assistant your customers will talk to. Try it at 2 AM, try it in Hinglish, try to confuse it.</p>
+      <ul>
+        <li><span class="led">01</span>Scan the code or tap the button</li>
+        <li><span class="led">02</span>Ask for a setup call like a real customer would</li>
+        <li><span class="led">03</span>Watch it book you in, in seconds</li>
+      </ul>
+    </div>
+    <div class="qr-card">
+      <strong>SCAN TO CHAT</strong>
+      <div class="qr-box" id="qr"><p>Your QR code appears here once the WhatsApp number is added.</p></div>
+      <a class="btn" id="realLink" href="#start" target="_blank" rel="noopener">Open WhatsApp</a>
+    </div>
+  </div>
+</section>
 
-<section class="who" aria-labelledby="whoTitle">
+<section class="founder" aria-labelledby="founderTitle">
+  <div class="wrap">
+    <div class="photo" role="img" aria-label="Photo of the founder"><div><span>[PHOTO]</span>Your real photo goes here, ideally at a clinic or shop counter.</div></div>
+    <div class="note">
+      <h2 class="ctrl-label" id="founderTitle" style="font-size:15px">A note from the founder</h2>
+      <blockquote>The business that replies first wins the customer.</blockquote>
+      <p>I've spent more than 15 years in sales, leading field teams across hundreds of branches. One lesson never changed: a customer who doesn't hear back in time goes to someone who replies.</p>
+      <p>Small clinics, salons and tutors lose customers every day for exactly this reason. Not because they're bad at their work, but because they're busy doing it. I built ZeroWait so owners never have to choose between the customer in front of them and the one messaging on WhatsApp.</p>
+      <p>Every ZeroWait desk is set up by our own team, for your business. If something isn't right, message me.</p>
+      <div><div class="sig">Vinod Sharma</div><div class="sig-role">Founder, ZeroWait · Gurugram</div></div>
+    </div>
+  </div>
+</section>
+ aria-labelledby="whoTitle">
   <div class="wrap">
     <h2 class="sign h2" id="whoTitle">For every counter with a queue.</h2>
     <div class="board">
@@ -416,6 +499,25 @@ footer a:hover{color:var(--on-panel)}
       <div><span class="led">PROPERTY</span><span>Site visits that actually happen</span></div>
       <div><span class="led">REPAIRS</span><span>AC, appliance and home visits</span></div>
       <div><span class="led">ADVISORS</span><span>CA, legal and finance meetings</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="offer" aria-labelledby="offerTitle">
+  <div class="wrap">
+    <div>
+      <h2 class="sign" id="offerTitle">Founding 50.</h2>
+      <p style="font-size:clamp(1.05rem,1.5vw,1.2rem);max-width:32rem;margin-top:16px">We're opening ZeroWait to the first 50 businesses in Delhi NCR on founding terms that won't be offered again.</p>
+      <div class="count" aria-label="Spots left">[XX] / 50 SPOTS LEFT</div>
+    </div>
+    <div>
+      <ul class="perks">
+        <li><b>Setup free</b><span>We configure your services, timings and replies for you.</span></li>
+        <li><b>First month on us</b><span>Pay only once you've seen it bring in bookings.</span></li>
+        <li><b>Founding price for life</b><span>Your monthly price stays the same as long as you stay.</span></li>
+        <li><b>Direct line to the founder</b><span>Your feedback shapes what ZeroWait does next.</span></li>
+      </ul>
+      <a class="btn" href="#start">Claim a founding spot</a>
     </div>
   </div>
 </section>
@@ -464,7 +566,7 @@ footer a:hover{color:var(--on-panel)}
       <details><summary>Can customers stop the messages?</summary><p>Yes. Customers can reply STOP at any time and they will not receive further reminders or follow-ups.</p></details>
       <details><summary>Is customer data safe?</summary><p>We only collect what's needed to book and remind, such as name, phone number and appointment time, and use it only for your business. Read our <a href="../privacy.html">Privacy Policy</a>.</p></details>
       <details><summary>How long does setup take?</summary><p>We do it for you. Share your working hours and services, and you can be live within a day.</p></details>
-      <details><summary>Can it reply in Hindi?</summary><p>[CONFIRM WHICH LANGUAGES ARE SUPPORTED]</p></details>
+      <details><summary>Can it reply in Hindi or Hinglish?</summary><p>[CONFIRM WHICH LANGUAGES ARE SUPPORTED]</p></details>
     </div>
   </div>
 </section>
@@ -494,7 +596,7 @@ footer a:hover{color:var(--on-panel)}
     <div class="foot-row">
       <span class="logo" style="font-size:20px">ZER0WAIT</span>
       <nav aria-label="Footer"><a href="#demo">Demo</a><a href="#pricing">Pricing</a><a href="#faq">FAQ</a><a href="../privacy.html">Privacy Policy</a><a href="../terms.html">Terms</a></nav>
-      <span>© 2026 [LEGAL BUSINESS NAME]</span>
+      <span>© 2026 [LEGAL BUSINESS NAME]. All rights reserved.</span>
     </div>
     <div class="legal">
       <p>[LEGAL BUSINESS NAME], [REGISTERED ADDRESS], India. Contact: [YOUR-EMAIL]. Grievance Officer: [NAME], [GRIEVANCE-EMAIL].</p>
@@ -503,26 +605,58 @@ footer a:hover{color:var(--on-panel)}
   </div>
 </footer>
 
+<script src="https://cdn.jsdelivr.net/npm/qrcode-generator@1.4.4/qrcode.js"></script>
 <script>
 const WHATSAPP_NUMBER = "[YOUR_WHATSAPP_NUMBER]"; // digits with country code, e.g. 919999999999
 
-/* ---------- Live demo ---------- */
+/* ---------- Live demo (English / Hinglish) ---------- */
 const BIZ = {
-  dental:{name:"Smile Dental Clinic",av:"SD",owner:"Dr. Mehta",services:["Tooth pain","Cleaning","Check-up"],noun:"appointment"},
-  salon:{name:"Glow Studio Salon",av:"GS",owner:"Neha",services:["Haircut","Facial","Hair colour"],noun:"booking"},
-  tuition:{name:"Bright Tuition Centre",av:"BT",owner:"Mr. Arora",services:["Maths demo class","Science batch","Board exam prep"],noun:"class"}
+  dental:{name:"Smile Dental Clinic",av:"SD",owner:"Dr. Mehta",services:{en:["Tooth pain","Cleaning","Check-up"],hi:["Daant mein dard","Cleaning","Check-up"]},noun:"appointment"},
+  salon:{name:"Glow Studio Salon",av:"GS",owner:"Neha",services:{en:["Haircut","Facial","Hair colour"],hi:["Haircut","Facial","Hair colour"]},noun:"booking"},
+  tuition:{name:"Bright Tuition Centre",av:"BT",owner:"Mr. Arora",services:{en:["Maths demo class","Science batch","Board exam prep"],hi:["Maths demo class","Science batch","Board exam prep"]},noun:"class"}
 };
 // Demo "now" is Monday 14:14. Times in minutes from Monday 00:00.
 const NOW = 14*60+14;
 const SLOTS = [
-  {label:"Today 6:30 PM", t:18*60+30},
-  {label:"Tomorrow 11:00 AM", t:24*60+11*60},
-  {label:"Tomorrow 4:00 PM", t:24*60+16*60}
+  {en:"Today 6:30 PM", hi:"Aaj 6:30 PM", t:18*60+30},
+  {en:"Tomorrow 11:00 AM", hi:"Kal 11:00 AM", t:24*60+11*60},
+  {en:"Tomorrow 4:00 PM", hi:"Kal 4:00 PM", t:24*60+16*60}
 ];
+const T = {
+  en:{
+    open:"Hi, I need an appointment", tap:b=>"Tap to message "+b,
+    greet:(o,n)=>`Hi! ${o} is with someone right now, so I'm helping. I'm the assistant for ${n}. What do you need?`,
+    name:"Sure. May I have your name?", ph:"Type your name",
+    slots:(n,sv)=>`Thanks ${n}. These times are free for ${sv.toLowerCase()}:`,
+    booked:(sv,l,o,r)=>`<span class="ok">✓ Booked.</span> ${sv} · ${l} with ${o}. I'll remind you at ${r}. Reply STOP anytime to opt out.`,
+    remind:(gm,n,sv,b,t)=>`Good ${gm} ${n}! Reminder: your ${sv.toLowerCase()} at ${b} is at ${t} today. Reply 1 to confirm or 2 to change the time.`,
+    rChips:["1 · Confirm","2 · Change time"],
+    ok:t=>`Great, see you at ${t}!`, move:(o,t)=>`No problem. ${o} has ${t} free too. I've moved you there.`,
+    after:n=>`Hi ${n}, hope your visit went well! How would you rate it?`,
+    good:o=>`Thank you! That means a lot to ${o}. See you next time.`,
+    bad:o=>`Sorry it wasn't great. I've asked ${o} to call you today to make it right.`,
+    cta:"Get this for my business"
+  },
+  hi:{
+    open:"Hi, appointment chahiye", tap:b=>b+" ko message karein",
+    greet:(o,n)=>`Namaste! ${o} abhi kisi ke saath busy hain, isliye main aapki help kar raha hoon. Main ${n} ka assistant hoon. Aapko kya chahiye?`,
+    name:"Zaroor. Aapka naam bata dijiye?", ph:"Apna naam likhiye",
+    slots:(n,sv)=>`Shukriya ${n}. ${sv} ke liye ye time free hain:`,
+    booked:(sv,l,o,r)=>`<span class="ok">✓ Booking ho gayi.</span> ${sv} · ${l}, ${o} ke saath. Main aapko ${r} par yaad dila dunga. Messages band karne ke liye kabhi bhi STOP likhein.`,
+    remind:(gm,n,sv,b,t)=>`Namaste ${n}! Yaad dila rahe hain: aaj ${t} par ${b} mein aapka ${sv} hai. Confirm karne ke liye 1, time badalne ke liye 2 bhejiye.`,
+    rChips:["1 · Confirm","2 · Time badlo"],
+    ok:t=>`Badhiya, ${t} par milte hain!`, move:(o,t)=>`Koi baat nahi. ${o} ${t} par bhi free hain. Maine aapka time badal diya hai.`,
+    after:n=>`Namaste ${n}, ummeed hai visit achhi rahi! Aap kitne star denge?`,
+    good:o=>`Bahut shukriya! ${o} ko bahut khushi hogi. Phir milte hain.`,
+    bad:o=>`Maaf kijiye, anubhav achha nahi raha. Maine ${o} ko aaj aapko call karne ko bol diya hai.`,
+    cta:"Mere business ke liye chahiye"
+  }
+};
 const $ = id => document.getElementById(id);
 const log=$('log'), reply=$('reply'), feed=$('feed');
 const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
-let S, timers=[], clockT=NOW, clockAnim;
+let S, LANG='en', timers=[], clockT=NOW, clockAnim;
+const L = () => T[LANG];
 
 function fmt(t){const d=Math.floor(t/1440), m=t%1440; return {day:["MON","TUE","WED"][d]||"MON", hm:String(Math.floor(m/60)).padStart(2,'0')+":"+String(m%60).padStart(2,'0')};}
 function ampm(t){const m=t%1440;let h=Math.floor(m/60);const mm=String(m%60).padStart(2,'0');const ap=h>=12?"PM":"AM";h=h%12||12;return h+":"+mm+" "+ap;}
@@ -530,8 +664,8 @@ function setClock(t){clockT=t;const f=fmt(t);$('clock').textContent=f.hm;$('cloc
 function runClock(to,done){
   cancelAnimationFrame(clockAnim);
   if(reduce){setClock(to);done&&done();return;}
-  const from=clockT, start=performance.now(), dur=1400;
-  const step=now=>{const p=Math.min(1,(now-start)/dur);const e=1-Math.pow(1-p,3);setClock(Math.round(from+(to-from)*e));if(p<1)clockAnim=requestAnimationFrame(step);else{done&&done();}};
+  const from=clockT, st=performance.now(), dur=1400;
+  const step=now=>{const p=Math.min(1,(now-st)/dur);const e=1-Math.pow(1-p,3);setClock(Math.round(from+(to-from)*e));if(p<1)clockAnim=requestAnimationFrame(step);else{done&&done();}};
   clockAnim=requestAnimationFrame(step);
 }
 function later(fn,ms){timers.push(setTimeout(fn,reduce?0:ms));}
@@ -569,26 +703,26 @@ function start(key){
   setClock(NOW);
   ['ffRemind','ffAfter'].forEach(id=>{$(id).disabled=true;$(id).classList.remove('ready');});
   msg('sys','MON 2:14 PM · '+b.owner.toUpperCase()+' IS BUSY');
-  chips(["Hi, I need an appointment"],t=>{msg('me',esc(t));askService();},"Tap to message "+b.name);
+  chips([L().open],t=>{msg('me',esc(t));askService();},L().tap(b.name));
 }
 function askService(){
   const b=S.b;
-  bot(`Hi! ${b.owner} is with someone right now, so I'm helping. I'm the assistant for ${b.name}. What do you need?`,()=>chips(b.services,s=>{S.service=s;msg('me',esc(s));askName();}));
+  bot(L().greet(b.owner,b.name),()=>chips(b.services[LANG],s=>{S.service=s;msg('me',esc(s));askName();}));
 }
 function askName(){
-  bot(`Sure. May I have your name?`,()=>{
-    reply.innerHTML='<form class="namebox" id="nf"><label for="nameIn" style="position:absolute;left:-9999px">Your name</label><input id="nameIn" type="text" placeholder="Type your name" autocomplete="off" maxlength="30"><button type="submit" aria-label="Send"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 20l18-8L3 4v6l12 2-12 2z"/></svg></button></form>';
+  bot(L().name,()=>{
+    reply.innerHTML='<form class="namebox" id="nf"><label for="nameIn" style="position:absolute;left:-9999px">Your name</label><input id="nameIn" type="text" placeholder="'+L().ph+'" autocomplete="off" maxlength="30"><button type="submit" aria-label="Send"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M3 20l18-8L3 4v6l12 2-12 2z"/></svg></button></form>';
     const f=$('nf'),i=$('nameIn');
     if(!reduce && window.matchMedia('(pointer:fine)').matches) i.focus({preventScroll:true});
     f.onsubmit=e=>{e.preventDefault();S.name=(i.value.trim()||"Guest").slice(0,30);msg('me',esc(S.name));askSlot();};
   });
 }
 function askSlot(){
-  bot(`Thanks ${esc(S.name)}. These times are free for ${esc(S.service.toLowerCase())}:`,()=>chips(SLOTS.map(s=>s.label),l=>{S.slot=SLOTS.find(s=>s.label===l);msg('me',esc(l));confirmBooking();}));
+  bot(L().slots(esc(S.name),esc(S.service)),()=>chips(SLOTS.map(s=>s[LANG]),l=>{const x=SLOTS.find(s=>s[LANG]===l);S.slot={label:l,t:x.t};msg('me',esc(l));confirmBooking();}));
 }
 function confirmBooking(){
   const s=S.slot, remind=s.t-240;
-  bot(`<span class="ok">✓ Booked.</span> ${esc(S.service)} · ${esc(s.label)} with ${S.b.owner}. I'll remind you at ${ampm(remind)}. Reply STOP anytime to opt out.`,()=>{
+  bot(L().booked(esc(S.service),esc(s.label),S.b.owner,ampm(remind)),()=>{
     post('New '+S.b.noun+': '+esc(S.name),esc(S.service)+' · '+esc(s.label));
     waiting('Booked. Now fast-forward the clock →');
     const r=$('ffRemind');r.disabled=false;r.classList.add('ready');
@@ -599,10 +733,10 @@ $('ffRemind').onclick=function(){
   const s=S.slot, t=s.t-240;
   runClock(t,()=>{
     msg('sys',fmt(t).day+' '+ampm(t)+' · 4 HOURS BEFORE');
-    bot(`Good ${t%1440<720?'morning':'afternoon'} ${esc(S.name)}! Reminder: your ${esc(S.service.toLowerCase())} at ${S.b.name} is at ${ampm(s.t)} today. Reply 1 to confirm or 2 to change the time.`,()=>chips(["1 · Confirm","2 · Change time"],c=>{
+    bot(L().remind(t%1440<720?'morning':'afternoon',esc(S.name),esc(S.service),S.b.name,ampm(s.t)),()=>chips(L().rChips,c=>{
       msg('me',esc(c));
-      if(c.startsWith('1')){bot(`Great, see you at ${ampm(s.t)}!`,()=>{post('Confirmed: '+esc(S.name),'Coming at '+ampm(s.t));readyAfter();});}
-      else{bot(`No problem. ${S.b.owner} has ${ampm(s.t+120)} free too. I've moved you there.`,()=>{S.slot={label:ampm(s.t+120),t:s.t+120};post('Rescheduled: '+esc(S.name),'Moved to '+ampm(s.t+120));readyAfter();});}
+      if(c.startsWith('1')){bot(L().ok(ampm(s.t)),()=>{post('Confirmed: '+esc(S.name),'Coming at '+ampm(s.t));readyAfter();});}
+      else{bot(L().move(S.b.owner,ampm(s.t+120)),()=>{S.slot={label:ampm(s.t+120),t:s.t+120};post('Rescheduled: '+esc(S.name),'Moved to '+ampm(s.t+120));readyAfter();});}
     }));
   });
 };
@@ -612,21 +746,33 @@ $('ffAfter').onclick=function(){
   const t=S.slot.t+60;
   runClock(t,()=>{
     msg('sys',fmt(t).day+' '+ampm(t)+' · 1 HOUR AFTER');
-    bot(`Hi ${esc(S.name)}, hope your visit went well! How would you rate it?`,()=>chips(["★ 1","★ 2","★ 3","★ 4","★ 5"],r=>{
+    bot(L().after(esc(S.name)),()=>chips(["★ 1","★ 2","★ 3","★ 4","★ 5"],r=>{
       const n=+r.slice(-1);msg('me',esc(r));
-      if(n>=4){bot(`Thank you! That means a lot to ${S.b.owner}. See you next time.`,()=>{post('Feedback: '+esc(S.name),'Rated '+n+' out of 5');end();});}
-      else{bot(`Sorry it wasn't great. I've asked ${S.b.owner} to call you today to make it right.`,()=>{post('Call back: '+esc(S.name),'Rated '+n+' out of 5. Asked for a call.',true);end();});}
+      if(n>=4){bot(L().good(S.b.owner),()=>{post('Feedback: '+esc(S.name),'Rated '+n+' out of 5');end();});}
+      else{bot(L().bad(S.b.owner),()=>{post('Call back: '+esc(S.name),'Rated '+n+' out of 5. Asked for a call.',true);end();});}
     }));
   });
 };
 function end(){
-  later(()=>{msg('sys','THAT IS ZEROWAIT');chips(["Get this for my business"],()=>{location.hash='start';}, "or pick another business above");},500);
+  later(()=>{msg('sys','THAT IS ZEROWAIT');chips([L().cta],()=>{location.hash='start';}, "or try the real desk below");},500);
 }
-document.querySelectorAll('.biz button').forEach(b=>b.addEventListener('click',()=>{
-  document.querySelectorAll('.biz button').forEach(x=>x.setAttribute('aria-pressed',x===b?'true':'false'));start(b.dataset.biz);
+document.querySelectorAll('#bizGroup button').forEach(b=>b.addEventListener('click',()=>{
+  document.querySelectorAll('#bizGroup button').forEach(x=>x.setAttribute('aria-pressed',x===b?'true':'false'));start(b.dataset.biz);
+}));
+document.querySelectorAll('#langGroup button').forEach(b=>b.addEventListener('click',()=>{
+  document.querySelectorAll('#langGroup button').forEach(x=>x.setAttribute('aria-pressed',x===b?'true':'false'));LANG=b.dataset.lang;start(S.key);
 }));
 $('restart').onclick=()=>start(S.key);
 start('dental');
+
+/* ---------- Real desk QR ---------- */
+(function(){
+  const digits=WHATSAPP_NUMBER.replace(/\D/g,'');
+  if(digits.length<10) return;
+  const url='https://wa.me/'+digits+'?text='+encodeURIComponent('Hi ZeroWait, I want to see how it works');
+  $('realLink').href=url;
+  try{ if(typeof qrcode==='function'){const q=qrcode(0,'M');q.addData(url);q.make();$('qr').innerHTML=q.createSvgTag({cellSize:6,margin:0,scalable:true});$('qr').setAttribute('aria-label','QR code to chat with ZeroWait on WhatsApp');$('qr').setAttribute('role','img');} }catch(e){}
+})();
 
 /* ---------- Calculator ---------- */
 (function(){
